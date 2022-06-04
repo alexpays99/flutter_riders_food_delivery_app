@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:riders_app/authentication/auth_screen.dart';
 import 'package:riders_app/global/global.dart';
+import 'package:riders_app/mainScreens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,12 +17,12 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 8), () async {
       //check state if current user auntheticated or not. if yes, navigate user to HomeScreen
       if (firebaseAuth.currentUser != null) {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => const HomeScreen(),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
         //check state if current user not auntheticated. if yes, navigate user to AuthScreen
       } else {
         Navigator.push(

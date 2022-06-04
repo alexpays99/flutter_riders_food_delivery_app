@@ -7,6 +7,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:riders_app/global/global.dart';
+import 'package:riders_app/mainScreens/home_screen.dart';
 import 'package:riders_app/widgets/custom_text_field.dart';
 import 'package:riders_app/widgets/error_dialog.dart';
 import 'package:riders_app/widgets/loading_dialog.dart';
@@ -183,8 +184,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       saveDataToFirestore(currentUser!).then((value) {
         Navigator.pop(context);
         //send user to HomePage
-        //Route newRoute = MaterialPageRoute(builder: (c) => const HomeScreen());
-        //Navigator.pushReplacement(context, newRoute);
+        Route newRoute = MaterialPageRoute(builder: (c) => const HomeScreen());
+        Navigator.pushReplacement(context, newRoute);
       });
     }
   }
@@ -195,7 +196,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         'riderUID': currentUser.uid,
         'riderEmail': currentUser.email,
         'riderName': nameController.text.trim(),
-        'ridererAvatarUrl': sellerImageUrl,
+        'riderAvatarUrl': sellerImageUrl,
         'phone': phoneController.text.trim(),
         'adress': completeAddress,
         'status': 'approved',
