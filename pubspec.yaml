@@ -76,6 +76,7 @@ flutter:
     - images/restaurant.jpg
     - images/signin.jpg
     - images/signup.jpg
+    - images/sign-up.jpg
     - images/success.jpg
 
   fonts:

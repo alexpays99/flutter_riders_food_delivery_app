@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:riders_app/authentication/auth_screen.dart';
 import 'package:riders_app/global/global.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -23,12 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
         // );
         //check state if current user not auntheticated. if yes, navigate user to AuthScreen
       } else {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => const AuthScren(),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const AuthScren(),
+          ),
+        );
       }
     });
   }
